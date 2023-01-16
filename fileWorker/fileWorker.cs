@@ -53,7 +53,7 @@ namespace Dotnet
             }
         }
 
-        public async static void WriteFile(FileInfo file, string text, bool writeToEndFlag = true)
+        public static void WriteFile(FileInfo file, string text, bool writeToEndFlag = true)
         {
             string path = file.FullName;
             StreamWriter writer = new StreamWriter(path, writeToEndFlag, Encoding.UTF8);
@@ -61,7 +61,7 @@ namespace Dotnet
             writer.Close();
         }
 
-        public static void WriteFileJson(FileInfo file, string text)
+        internal static void WriteFileJson(FileInfo file, string text)
         {
             string path = file.FullName;
 
@@ -147,7 +147,7 @@ namespace Dotnet
             return fileName;
         }
 
-        public static int FindStringLineInFile(FileInfo file, string stringToFind)
+        internal static int FindStringLineInFile(FileInfo file, string stringToFind)
         {
             
             string path = file.FullName;
@@ -177,7 +177,7 @@ namespace Dotnet
             }
         }
 
-        public static List<string> GetFilesInJson(FileInfo file)
+        internal static List<string> GetFilesInJson(FileInfo file)
         {
             string path = file.FullName;
             string[] lines = File.ReadAllLines(path);
@@ -350,26 +350,26 @@ namespace Dotnet
         {
             string[] allfiles = WorkerFiles.GetAllFilesInDirWithoutExtension(dirPath);
             	
-            List<string> foundSongsInJsons = new List<string>();
-            List<int> foundSongsInJsonsIndexLine = new List<int>();
+            List<string> foundStringsInJsons = new List<string>();
+            List<int> foundStringsInJsonsIndexLine = new List<int>();
             foreach (string someFileName in allfiles)
             {
                 FileInfo file = new FileInfo(dirPath + Path.DirectorySeparatorChar + someFileName + signJson);
                 int lineIndex = WorkerFiles.FindStringLineInFile(file, stringToFind);
                 if (lineIndex > 0)
                 {
-                    foundSongsInJsons.Add(someFileName);
-                    foundSongsInJsonsIndexLine.Add(lineIndex);
+                    foundStringsInJsons.Add(someFileName);
+                    foundStringsInJsonsIndexLine.Add(lineIndex);
 
                 }
 
             }
 
-            if (foundSongsInJsons.Count > 0)
+            if (foundStringsInJsons.Count > 0)
             {
-                for (int i = 0; i < foundSongsInJsons.Count; i++)
+                for (int i = 0; i < foundStringsInJsons.Count; i++)
                 {
-                    Console.WriteLine($"Text {stringToFind} \nfound in {foundSongsInJsonsIndexLine[i].ToString()} line of json {foundSongsInJsons[i]}");
+                    Console.WriteLine($"Text {stringToFind} \nfound in {foundStringsInJsonsIndexLine[i].ToString()} line of json {foundStringsInJsons[i]}");
                 }
             }
             else
@@ -377,16 +377,16 @@ namespace Dotnet
                 Console.WriteLine($"Text {stringToFind} \nnot found");
             }
 
-            Console.WriteLine($"Total matches: {foundSongsInJsons.Count}");
+            Console.WriteLine($"Total matches: {foundStringsInJsons.Count}");
 
         }
 
         public static List<string> GetFilesFromJson(string someFileName)
         {
             FileInfo someFile = new FileInfo(dirPath + Path.DirectorySeparatorChar + someFileName + signJson);
-            List<string> allSongsInJson = WorkerFiles.GetFilesInJson(someFile);
+            List<string> allStringsInJson = WorkerFiles.GetFilesInJson(someFile);
 
-            return allSongsInJson;
+            return allStringsInJson;
 
         }
 
