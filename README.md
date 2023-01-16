@@ -163,20 +163,9 @@ WorkerFiles.DeleteLineInFile(someFile, lineIndex);
 AWorkerJson
 ===========
 ```
-public class AWorkerJson
+public static class AWorkerJson
 ```
-Example
 
-To indicate program home directory by default where folder with jsons will be created
-```
-AWorkerJson jsonWorker = new AWorkerJson();
-```
-To indicate your path where folder with jsons will be created
-```
-string dirPath = "AbsolutePathToDirectory";
-
-AWorkerJson jsonWorker = new AWorkerJson(dirPath);
-```
 Methods
 -------
 
