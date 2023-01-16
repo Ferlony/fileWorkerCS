@@ -8,6 +8,9 @@ Usage
 =====
 
 1) Use to create files and directories, write and read files, get files/directories in directories:
+
+WorkerFiles
+===========
 ```
 public static class WorkerFiles
 ```
@@ -156,6 +159,9 @@ int lineIndex = 4 // deletes 4th line
 WorkerFiles.DeleteLineInFile(someFile, lineIndex);
 ```
 2) Use to work with JSON:
+
+AWorkerJson
+===========
 ```
 public class AWorkerJson
 ```
