@@ -390,7 +390,7 @@ namespace Dotnet
 
         }
 
-        public static string GetStringFromBDLine(string file, string desiredString)
+        public static string GetStringFromJsonLine(string file, string desiredString)
         {            
             string checktext = "";
             int counter = 0;
@@ -446,7 +446,7 @@ namespace Dotnet
             List<string> newlist = new List<string>();
             for (int i = 0; i < list.Count; i++)
             {
-                newlist.Add(GetStringFromBDLine(list[i], desiredString));   
+                newlist.Add(GetStringFromJsonLine(list[i], desiredString));   
             }
             return newlist;
         }
