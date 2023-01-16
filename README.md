@@ -93,11 +93,13 @@ Console.WriteLine(WorkerFiles.ReadFile(someFile, false));
 ```
 ### To get all files located in directory
 
-public static string[] GetAllFilesInDir(string dirPath)\
- Example
+public static string[] GetAllFilesInDir(string dirPath)
+
+Example
 ```
-string dirPath = "AbsolutePathToDirectory";\
- string[] allfiles = WorkerFiles.GetAllFilesInDir(dirPath);
+string dirPath = "AbsolutePathToDirectory";
+
+string[] allfiles = WorkerFiles.GetAllFilesInDir(dirPath);
 ```
 ### To get all files located in directory without extensions
 
@@ -105,8 +107,9 @@ public static string[] GetAllFilesInDirWithoutExtension(string dirPath)
 
 Example
 ```
-string dirPath = "AbsolutePathToDirectory";\
- string[] allfiles = WorkerFiles.GetAllFilesInDirWithoutExtension(dirPath);
+string dirPath = "AbsolutePathToDirectory";
+
+string[] allfiles = WorkerFiles.GetAllFilesInDirWithoutExtension(dirPath);
 ```
 ### To get all directories located in directory
 
@@ -114,8 +117,9 @@ public static string[] GetAllDirsInDir(string dirPath)
 
 Example
 ```
-string dirPath = "AbsolutePathToDirectory";\
- string[] allfiles = WorkerFiles.GetAllDirsInDir(dirPath);
+string dirPath = "AbsolutePathToDirectory";
+
+string[] allfiles = WorkerFiles.GetAllDirsInDir(dirPath);
 ```
 ### To get file parent folder
 
@@ -123,8 +127,9 @@ public static string GetFileDir(string filePath)
 
 Example
 ```
-string path = "AbsolutePathToFile";\
- string parentFolder = GetFileDir(path);
+string path = "AbsolutePathToFile";
+
+string parentFolder = GetFileDir(path);
 ```
 ### To get file name
 
@@ -132,8 +137,9 @@ public static string GetFileName(string filePath)
 
 Example
 ```
-string path = "AbsolutePathToFile";\
- string fileName = GetFileName(path);
+string path = "AbsolutePathToFile";
+
+string fileName = GetFileName(path);
 ```
 ### To delete some line in file
 
@@ -143,9 +149,11 @@ Example
 ```
 string path = "AbsolutePathToFile";
 
-FileInfo someFile = new FileInfo(path);\
- int lineIndex = 4 // deletes 4th line\
- WorkerFiles.DeleteLineInFile(someFile, lineIndex);
+FileInfo someFile = new FileInfo(path);
+
+int lineIndex = 4 // deletes 4th line
+
+WorkerFiles.DeleteLineInFile(someFile, lineIndex);
 ```
 2) Use to work with JSON:
 
