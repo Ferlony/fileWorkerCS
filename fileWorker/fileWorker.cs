@@ -206,19 +206,10 @@ namespace Dotnet
 
     }
 
-    public class AWorkerJson
+    public static class AWorkerJson
     {
-        public AWorkerJson()
-        {
-            this.dirPath = @$".{Path.DirectorySeparatorChar}JsonFilesFolder";
-        }
-        
-        public AWorkerJson(string dirPath)
-        {
-            this.dirPath = dirPath;
-        }
 
-        private string dirPath;
+        static string dirPath = @$".{Path.DirectorySeparatorChar}JsonFilesFolder";
         static string signJson = ".json";
 
         public static void AddFileToJson(string path, string someFileName)
